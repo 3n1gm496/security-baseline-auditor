@@ -1,0 +1,2332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Baseline Audit Report</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #dee2e6;
+    --text: #212529; --muted: #6c757d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.3rem; margin: 1.5rem 0 0.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; }
+  .score-box { text-align: center; padding: 1.5rem; border-radius: 8px; color: #fff; font-size: 2rem; font-weight: bold; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+  .stat { text-align: center; }
+  .stat .num { font-size: 1.8rem; font-weight: bold; }
+  .stat .label { color: var(--muted); font-size: 0.85rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.7rem; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: #f1f3f5; font-weight: 600; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+  .evidence { font-family: monospace; font-size: 0.8rem; color: var(--muted); word-break: break-all; }
+  .remediation { font-size: 0.85rem; color: #155724; background: #d4edda; padding: 0.4rem 0.6rem; border-radius: 4px; margin-top: 0.3rem; }
+  footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Security Baseline Audit Report</h1>
+  <div class="meta">
+    Generated: 2026-03-10T23:10:24.459706+00:00 &middot;
+    Mode: quick &middot;
+    Duration: 19.39s
+  </div>
+
+  <div class="grid">
+    <div class="card score-box" style="background:#dc3545">
+      100.0/100<br>
+      <span style="font-size:1rem">CRITICAL</span>
+    </div>
+    <div class="card stat"><div class="num">16</div><div class="label">Total Checks</div></div>
+    <div class="card stat"><div class="num">2</div><div class="label">Failed</div></div>
+    <div class="card stat"><div class="num">392</div><div class="label">Secrets Found</div></div>
+    <div class="card stat"><div class="num">10</div><div class="label">Public Ports</div></div>
+  </div>
+
+  
+  <h2>Host Information</h2>
+  <div class="card">
+    <table>
+      <tr><th>Hostname</th><td>172e2a29e328</td></tr>
+      <tr><th>OS</th><td>Ubuntu 22.04.5 LTS (linux)</td></tr>
+      <tr><th>Kernel</th><td>6.1.102</td></tr>
+      <tr><th>Architecture</th><td>x86_64</td></tr>
+      <tr><th>Uptime</th><td>up 4 days, 15 hours, 35 minutes</td></tr>
+      <tr><th>Local Users</th><td>root, nobody, ubuntu, user</td></tr>
+      <tr><th>Security Tools</th><td>ufw, iptables</td></tr>
+    </table>
+  </div>
+  <h2>Network Exposure (18 ports)</h2>
+  <div class="card">
+    <table>
+      <tr><th>Proto</th><th>Address</th><th>Port</th><th>PID</th><th>Process</th><th>User</th><th>Binding</th></tr>
+      <tr>
+        <td>tcp</td>
+        <td>0.0.0.0</td>
+        <td>5900</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#e74c3c">PUBLIC</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>127.0.0.1</td>
+        <td>9222</td>
+        <td>903</td>
+        <td>chromium-browse</td>
+        <td>ubuntu</td>
+        <td><span class="badge" style="background:#27ae60">local</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>127.0.0.1</td>
+        <td>9330</td>
+        <td>799</td>
+        <td>start_server</td>
+        <td>ubuntu</td>
+        <td><span class="badge" style="background:#27ae60">local</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>0.0.0.0</td>
+        <td>22</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#e74c3c">PUBLIC</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>0.0.0.0</td>
+        <td>8329</td>
+        <td>1513</td>
+        <td>node</td>
+        <td>ubuntu</td>
+        <td><span class="badge" style="background:#e74c3c">PUBLIC</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>0.0.0.0</td>
+        <td>8330</td>
+        <td>799</td>
+        <td>start_server</td>
+        <td>ubuntu</td>
+        <td><span class="badge" style="background:#e74c3c">PUBLIC</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>0.0.0.0</td>
+        <td>8340</td>
+        <td>835</td>
+        <td>upgrade</td>
+        <td>ubuntu</td>
+        <td><span class="badge" style="background:#e74c3c">PUBLIC</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>127.0.0.53%lo</td>
+        <td>53</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#27ae60">local</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>127.0.0.1</td>
+        <td>8350</td>
+        <td>1555</td>
+        <td>manus-mcp-cli</td>
+        <td>ubuntu</td>
+        <td><span class="badge" style="background:#27ae60">local</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>*</td>
+        <td>5901</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#e74c3c">PUBLIC</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>::</td>
+        <td>5900</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#e74c3c">PUBLIC</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>::</td>
+        <td>22</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#e74c3c">PUBLIC</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>*</td>
+        <td>8333</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#e74c3c">PUBLIC</span></td>
+      </tr><tr>
+        <td>tcp</td>
+        <td>*</td>
+        <td>49983</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#e74c3c">PUBLIC</span></td>
+      </tr><tr>
+        <td>udp</td>
+        <td>224.0.0.251</td>
+        <td>5353</td>
+        <td>903</td>
+        <td>chromium-browse</td>
+        <td>ubuntu</td>
+        <td><span class="badge" style="background:#27ae60">local</span></td>
+      </tr><tr>
+        <td>udp</td>
+        <td>127.0.0.53</td>
+        <td>53</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#27ae60">local</span></td>
+      </tr><tr>
+        <td>udp</td>
+        <td>127.0.0.1</td>
+        <td>323</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#27ae60">local</span></td>
+      </tr><tr>
+        <td>udp</td>
+        <td>::1</td>
+        <td>323</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td><span class="badge" style="background:#27ae60">local</span></td>
+      </tr>
+    </table>
+  </div>
+  <h2>Hardening Checks (16)</h2>
+  <div class="card">
+    <table>
+      <tr><th>Status</th><th>Severity</th><th>ID</th><th>Title</th></tr>
+      <tr>
+        <td><span class="badge" style="background:#e74c3c">fail</span></td>
+        <td><span class="badge" style="background:#e74c3c">high</span></td>
+        <td>LIN-001</td>
+        <td>SSH: PermitRootLogin enabled<div class="evidence">PermitRootLogin yes</div></td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">warn</span></td>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>LIN-002</td>
+        <td>SSH: PasswordAuthentication enabled<div class="evidence">PasswordAuthentication yes</div></td>
+      </tr><tr>
+        <td><span class="badge" style="background:#27ae60">pass</span></td>
+        <td><span class="badge" style="background:#95a5a6">info</span></td>
+        <td>LIN-003</td>
+        <td>SSH: Protocol version OK</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">warn</span></td>
+        <td><span class="badge" style="background:#3498db">low</span></td>
+        <td>LIN-004</td>
+        <td>SSH: X11Forwarding enabled<div class="evidence">X11Forwarding yes</div></td>
+      </tr><tr>
+        <td><span class="badge" style="background:#27ae60">pass</span></td>
+        <td><span class="badge" style="background:#95a5a6">info</span></td>
+        <td>LIN-005</td>
+        <td>Sudoers: No NOPASSWD entries</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#27ae60">pass</span></td>
+        <td><span class="badge" style="background:#95a5a6">info</span></td>
+        <td>LIN-006</td>
+        <td>Shadow file permissions OK</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#e74c3c">fail</span></td>
+        <td><span class="badge" style="background:#e74c3c">high</span></td>
+        <td>LIN-007</td>
+        <td>Firewall: No active firewall detected</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#27ae60">pass</span></td>
+        <td><span class="badge" style="background:#95a5a6">info</span></td>
+        <td>LIN-009</td>
+        <td>No risky services enabled</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#27ae60">pass</span></td>
+        <td><span class="badge" style="background:#95a5a6">info</span></td>
+        <td>LIN-010</td>
+        <td>IP forwarding disabled</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#27ae60">pass</span></td>
+        <td><span class="badge" style="background:#95a5a6">info</span></td>
+        <td>LIN-011</td>
+        <td>Core dumps restricted</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#95a5a6">skip</span></td>
+        <td><span class="badge" style="background:#95a5a6">info</span></td>
+        <td>LIN-012</td>
+        <td>/tmp mount options</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">warn</span></td>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>LIN-013</td>
+        <td>Automatic updates: not configured</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">warn</span></td>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>LIN-014</td>
+        <td>Password policy: not configured</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">warn</span></td>
+        <td><span class="badge" style="background:#3498db">low</span></td>
+        <td>LIN-015</td>
+        <td>SSH: MaxAuthTries too high<div class="evidence">MaxAuthTries 6</div></td>
+      </tr><tr>
+        <td><span class="badge" style="background:#27ae60">pass</span></td>
+        <td><span class="badge" style="background:#95a5a6">info</span></td>
+        <td>LIN-016</td>
+        <td>/etc/passwd permissions OK</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#27ae60">pass</span></td>
+        <td><span class="badge" style="background:#95a5a6">info</span></td>
+        <td>LIN-017</td>
+        <td>ASLR: fully enabled</td>
+      </tr>
+    </table>
+  </div>
+  <h2>Secret Exposure (392)</h2>
+  <div class="card">
+    <table>
+      <tr><th>Severity</th><th>Pattern</th><th>Location</th><th>Value (masked)</th></tr>
+      <tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.env:19</td>
+        <td class="evidence">2eda********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.env:20</td>
+        <td class="evidence">c39c********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.env:23</td>
+        <td class="evidence">bd71********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/_parser.py:80</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/_parser.py:209</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/_parser.py:280</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/_tokenizer.py:132</td>
+        <td class="evidence">Toke*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/_tokenizer.py:146</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/licenses/__init__.py:125</td>
+        <td class="evidence">toke******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/_parser.py:80</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/_parser.py:209</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/_parser.py:280</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/_tokenizer.py:132</td>
+        <td class="evidence">Toke*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/_tokenizer.py:146</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/licenses/__init__.py:125</td>
+        <td class="evidence">toke******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.config/code-server/config.yaml:4</td>
+        <td class="evidence">bd71********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/ftplib.py:943</td>
+        <td class="evidence">netr********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/functools.py:853</td>
+        <td class="evidence">get_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/functools.py:856</td>
+        <td class="evidence">curr********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/functools.py:926</td>
+        <td class="evidence">get_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/getpass.py:61</td>
+        <td class="evidence">fall********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/getpass.py:76</td>
+        <td class="evidence">_raw********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/getpass.py:90</td>
+        <td class="evidence">fall********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/imaplib.py:638</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/imaplib.py:640</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/imaplib.py:1573</td>
+        <td class="evidence">getp********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/inspect.py:2202</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/netrc.py:151</td>
+        <td class="evidence">lexe********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/plistlib.py:536</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/poplib.py:340</td>
+        <td class="evidence">byte********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py:167</td>
+        <td class="evidence">next****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py:170</td>
+        <td class="evidence">next****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py:174</td>
+        <td class="evidence">next****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py:177</td>
+        <td class="evidence">next****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py:180</td>
+        <td class="evidence">next****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py:300</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/smtplib.py:681</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/tokenize.py:127</td>
+        <td class="evidence">grou********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/tokenize.py:136</td>
+        <td class="evidence">Whit******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/tokenize.py:256</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/email/_header_value_parser.py:1483</td>
+        <td class="evidence">Toke*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/email/_header_value_parser.py:2162</td>
+        <td class="evidence">get_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/email/_header_value_parser.py:2571</td>
+        <td class="evidence">Valu********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/email/generator.py:387</td>
+        <td class="evidence">rand********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/idlelib/filelist.py:106</td>
+        <td class="evidence">os.g*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/idlelib/iomenu.py:377</td>
+        <td class="evidence">os.g*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/logging/handlers.py:1054</td>
+        <td class="evidence">cred*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/multiprocessing/managers.py:283</td>
+        <td class="evidence">Toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:94</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:121</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:344</td>
+        <td class="evidence">spli********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:349</td>
+        <td class="evidence">url_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:360</td>
+        <td class="evidence">inde******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:365</td>
+        <td class="evidence">inde********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:407</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:426</td>
+        <td class="evidence">pass****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:442</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:467</td>
+        <td class="evidence">ask_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:490</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py:517</td>
+        <td class="evidence">pass*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/vcs/subversion.py:98</td>
+        <td class="evidence">Opti********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/vcs/versioncontrol.py:410</td>
+        <td class="evidence">Opti********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/vcs/versioncontrol.py:423</td>
+        <td class="evidence">user*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/vcs/versioncontrol.py:424</td>
+        <td class="evidence">Opti********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/vcs/versioncontrol.py:426</td>
+        <td class="evidence">hide********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/distlib/index.py:83</td>
+        <td class="evidence">cfg.****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/distlib/util.py:822</td>
+        <td class="evidence">pref********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/distlib/util.py:826</td>
+        <td class="evidence">unqu********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/packaging/_parser.py:71</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/packaging/_parser.py:197</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/packaging/_parser.py:268</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/packaging/_tokenizer.py:133</td>
+        <td class="evidence">Toke*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/packaging/_tokenizer.py:147</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/pygments/lexer.py:585</td>
+        <td class="evidence">cls.********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/pygments/token.py:55</td>
+        <td class="evidence">_Tok********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/adapters.py:281</td>
+        <td class="evidence">get_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/adapters.py:285</td>
+        <td class="evidence">pass*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/adapters.py:606</td>
+        <td class="evidence">get_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/auth.py:53</td>
+        <td class="evidence">str(********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/auth.py:60</td>
+        <td class="evidence">pass********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/auth.py:81</td>
+        <td class="evidence">pass****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/auth.py:112</td>
+        <td class="evidence">pass****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/sessions.py:322</td>
+        <td class="evidence">get_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py:69</td>
+        <td class="evidence">pass****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py:136</td>
+        <td class="evidence">pass*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py:203</td>
+        <td class="evidence">pass*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py:362</td>
+        <td class="evidence">Prom*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py:369</td>
+        <td class="evidence">{pas********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py:62</td>
+        <td class="evidence">Styl****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py:91</td>
+        <td class="evidence">Styl****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py:197</td>
+        <td class="evidence">tupl********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py:204</td>
+        <td class="evidence">toke******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py:496</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py:508</td>
+        <td class="evidence">next********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/truststore/_api.py:143</td>
+        <td class="evidence">_Pas********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/truststore/_api.py:146</td>
+        <td class="evidence">pass****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connection.py:320</td>
+        <td class="evidence">key_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connection.py:354</td>
+        <td class="evidence">key_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connection.py:423</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connectionpool.py:975</td>
+        <td class="evidence">key_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connectionpool.py:991</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connectionpool.py:1047</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py:477</td>
+        <td class="evidence">pass********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/socks.py:102</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/_securetransport/low_level.py:231</td>
+        <td class="evidence">base********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/tkinter/filedialog.py:219</td>
+        <td class="evidence">os.g*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/parse.py:198</td>
+        <td class="evidence">user********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/parse.py:228</td>
+        <td class="evidence">user********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/parse.py:1157</td>
+        <td class="evidence">user********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:56</td>
+        <td class="evidence">gehe********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:757</td>
+        <td class="evidence">_spl********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:872</td>
+        <td class="evidence">HTTP********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:934</td>
+        <td class="evidence">pass********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:935</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:1001</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:1064</td>
+        <td class="evidence">HTTP********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:1066</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:1523</td>
+        <td class="evidence">_spl********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:1902</td>
+        <td class="evidence">unqu********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:1908</td>
+        <td class="evidence">unqu********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:2044</td>
+        <td class="evidence">_spl********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:2048</td>
+        <td class="evidence">unqu********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:2274</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:2292</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:2306</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:2320</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:2337</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:2338</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:2346</td>
+        <td class="evidence">getp********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py:2447</td>
+        <td class="evidence">self********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/zipfile/__init__.py:1575</td>
+        <td class="evidence">expe****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/zipfile/__init__.py:1702</td>
+        <td class="evidence">self****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/zipfile/__init__.py:1704</td>
+        <td class="evidence">expe****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/.nvm/test/common.sh:119</td>
+        <td class="evidence">subs******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/security-baseline-auditor/auditor/checks/linux/hardening.py:594</td>
+        <td class="evidence">worl********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/security-baseline-auditor/auditor/checks/macos/hardening.py:144</td>
+        <td class="evidence">requ****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#dc3545">critical</span></td>
+        <td>AWS Access Key</td>
+        <td>/home/ubuntu/security-baseline-auditor/tests/test_secrets.py:13</td>
+        <td class="evidence">AKIA********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#dc3545">critical</span></td>
+        <td>AWS Access Key</td>
+        <td>/home/ubuntu/security-baseline-auditor/tests/test_secrets.py:54</td>
+        <td class="evidence">AKIA********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#e74c3c">high</span></td>
+        <td>GitHub Token</td>
+        <td>/home/ubuntu/security-baseline-auditor/tests/test_secrets.py:64</td>
+        <td class="evidence">ghp_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/security-baseline-auditor/tests/test_secrets.py:64</td>
+        <td class="evidence">ghp_********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#dc3545">critical</span></td>
+        <td>Private Key (PEM)</td>
+        <td>/home/ubuntu/security-baseline-auditor/tests/test_secrets.py:74</td>
+        <td class="evidence">----********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#dc3545">critical</span></td>
+        <td>AWS Access Key</td>
+        <td>/home/ubuntu/security-baseline-auditor/tests/test_secrets.py:97</td>
+        <td class="evidence">AKIA********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic API Key</td>
+        <td>/home/ubuntu/security-baseline-auditor/tests/test_secrets.py:97</td>
+        <td class="evidence">AKIA********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#dc3545">critical</span></td>
+        <td>AWS Access Key</td>
+        <td>/home/ubuntu/security-baseline-auditor/tests/test_secrets.py:106</td>
+        <td class="evidence">AKIA********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic API Key</td>
+        <td>/home/ubuntu/security-baseline-auditor/tests/test_secrets.py:106</td>
+        <td class="evidence">AKIA********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/terminal_full_output/2026-03-10_19-09-31_272881_2735.txt:57</td>
+        <td class="evidence">:tes********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/terminal_full_output/2026-03-10_19-09-31_272881_2735.txt:58</td>
+        <td class="evidence">:tes********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/home/ubuntu/terminal_full_output/2026-03-10_19-09-31_272881_2735.txt:59</td>
+        <td class="evidence">:tes********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/etc/java-11-openjdk/management/management.properties:108</td>
+        <td class="evidence">&lt;key********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/etc/java-11-openjdk/management/management.properties:110</td>
+        <td class="evidence">&lt;tru********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/js/scripting/css-procedural.js:615</td>
+        <td class="evidence">this********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/js/scripting/css-procedural.js:680</td>
+        <td class="evidence">this********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/js/scripting/css-procedural.js:682</td>
+        <td class="evidence">this********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/js/scripting/css-procedural.js:695</td>
+        <td class="evidence">this********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/main/chn-0.json:5302</td>
+        <td class="evidence">*.sh********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/main/chn-0.json:5303</td>
+        <td class="evidence">*?fr********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/main/irn-0.json:496</td>
+        <td class="evidence">*&amp;cl********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-cookies.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-cookies.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-cookies.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-others.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.abort-on-stack-trace.js:127</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.abort-on-stack-trace.js:127</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.evaldata-prune.js:117</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/cze-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/cze-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/cze-0.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.abort-on-stack-trace.js:127</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.evaldata-prune.js:117</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.json-prune-fetch-response.js:386</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.json-prune-xhr-response.js:388</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fin-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fin-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fin-0.json-prune-fetch-response.js:386</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fin-0.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.abort-on-stack-trace.js:127</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/hun-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/hun-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/hun-0.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/idn-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/idn-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/idn-0.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.abort-on-stack-trace.js:127</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/isr-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/isr-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/isr-0.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/jpn-1.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/jpn-1.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/jpn-1.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/jpn-1.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/jpn-1.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.abort-on-stack-trace.js:127</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/ltu-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/ltu-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nld-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nld-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nld-0.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nld-0.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nor-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nor-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nor-0.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nor-0.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nor-0.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/pol-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/pol-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/pol-0.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/pol-0.abort-on-stack-trace.js:127</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rou-1.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rou-1.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rou-1.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.abort-on-stack-trace.js:127</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.abort-on-stack-trace.js:127</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/swe-1.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/swe-1.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/swe-1.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/swe-1.json-prune-fetch-response.js:386</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/swe-1.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tha-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tha-0.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.abort-current-script.js:94</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.abort-on-property-read.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.abort-on-property-write.js:62</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.json-prune.js:290</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.no-xhr-if.js:225</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.prevent-fetch.js:185</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/resources/scriptlets.js:305</td>
+        <td class="evidence">scri********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/resources/scriptlets.js:368</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/resources/scriptlets.js:1027</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/resources/scriptlets.js:1363</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/resources/scriptlets.js:1419</td>
+        <td class="evidence">getE********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/thirdparties/urlhaus-filter/urlhaus-filter-online.txt:1502</td>
+        <td class="evidence">31a3********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/thirdparties/urlhaus-filter/urlhaus-filter-online.txt:1503</td>
+        <td class="evidence">49d7********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/thirdparties/urlhaus-filter/urlhaus-filter-online.txt:1504</td>
+        <td class="evidence">0af5********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/ublock/badware.min.txt:2919</td>
+        <td class="evidence">*&amp;uu********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/1p-filters.js:74</td>
+        <td class="evidence">hint********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/advanced-settings.js:40</td>
+        <td class="evidence">func********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/benchmarks.js:259</td>
+        <td class="evidence">keyw********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/code-viewer.js:62</td>
+        <td class="evidence">func********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript-extra.js:470</td>
+        <td class="evidence">vAPI********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript-extra.js:549</td>
+        <td class="evidence">this********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript-extra.js:551</td>
+        <td class="evidence">vAPI********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript-extra.js:567</td>
+        <td class="evidence">this********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript.js:640</td>
+        <td class="evidence">hasP********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript.js:730</td>
+        <td class="evidence">vAPI********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js:127</td>
+        <td class="evidence">func********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js:246</td>
+        <td class="evidence">merg********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js:437</td>
+        <td class="evidence">`${t****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js:440</td>
+        <td class="evidence">`${s*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js:442</td>
+        <td class="evidence">`${d*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js:546</td>
+        <td class="evidence">merg********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/logger-ui.js:1096</td>
+        <td class="evidence">resp********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/logger-ui.js:1125</td>
+        <td class="evidence">allT********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/messaging.js:863</td>
+        <td class="evidence">${vA********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/messaging.js:1480</td>
+        <td class="evidence">µb.p********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/messaging.js:1573</td>
+        <td class="evidence">µb.p********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/messaging.js:1749</td>
+        <td class="evidence">${vA********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/redirect-engine.js:111</td>
+        <td class="evidence">warS********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/redirect-engine.js:112</td>
+        <td class="evidence">${se********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/redirect-engine.js:200</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering-core.js:44</td>
+        <td class="evidence">`${a********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering-core.js:46</td>
+        <td class="evidence">reng********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering-core.js:61</td>
+        <td class="evidence">`${a********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering-core.js:68</td>
+        <td class="evidence">depe********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering.js:192</td>
+        <td class="evidence">unde******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering.js:204</td>
+        <td class="evidence">vAPI********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering.js:211</td>
+        <td class="evidence">vAPI********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering.js:228</td>
+        <td class="evidence">vAPI********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering.js:243</td>
+        <td class="evidence">vAPI********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-dnr-filtering.js:105</td>
+        <td class="evidence">JSON********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js:898</td>
+        <td class="evidence">/[^\********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js:1230</td>
+        <td class="evidence">this********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js:2287</td>
+        <td class="evidence">this********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js:2375</td>
+        <td class="evidence">s.sl********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js:2928</td>
+        <td class="evidence">arg.*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js:2931</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js:2935</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js:4296</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js:3199</td>
+        <td class="evidence">/[%0********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js:3754</td>
+        <td class="evidence">matc*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js:3773</td>
+        <td class="evidence">best********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js:3816</td>
+        <td class="evidence">best********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js:4512</td>
+        <td class="evidence">rule********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js:4517</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js:5495</td>
+        <td class="evidence">urlT********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/storage.js:1146</td>
+        <td class="evidence">${vA********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/tab.js:985</td>
+        <td class="evidence">Date*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/tab.js:1007</td>
+        <td class="evidence">Date*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/tab.js:1019</td>
+        <td class="evidence">Date*******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/traffic.js:465</td>
+        <td class="evidence">µb.p********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/vapi-background.js:1174</td>
+        <td class="evidence">/\?s********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/vapi-background.js:1185</td>
+        <td class="evidence">matc*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/vapi-background.js:1210</td>
+        <td class="evidence">gene********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/vapi-background.js:1218</td>
+        <td class="evidence">`${g********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/vapi-client.js:43</td>
+        <td class="evidence">func******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/whitelist.js:46</td>
+        <td class="evidence">func********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/search.js:46</td>
+        <td class="evidence">func********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/ubo-dynamic-filtering.js:216</td>
+        <td class="evidence">func********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/ubo-static-filtering.js:69</td>
+        <td class="evidence">astP********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/ubo-static-filtering.js:119</td>
+        <td class="evidence">astP********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/ubo-static-filtering.js:234</td>
+        <td class="evidence">func********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/ubo-static-filtering.js:776</td>
+        <td class="evidence">`/${********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlets/epicker.js:816</td>
+        <td class="evidence">vAPI********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlets/epicker.js:818</td>
+        <td class="evidence">vAPI********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlets/load-3p-css.js:30</td>
+        <td class="evidence">vAPI********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/chrome-extensions/ublock-origin/web_accessible_resources/nobab.js:51</td>
+        <td class="evidence">toke******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/scripts/check-start-code-server.sh:15</td>
+        <td class="evidence">$(op*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/scripts/check-start-code-server.sh:17</td>
+        <td class="evidence">$COD********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/scripts/start-neko-with-turn.sh:14</td>
+        <td class="evidence">$(op*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/.packages/scripts/start-neko-with-turn.sh:18</td>
+        <td class="evidence">$(op*****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/current/data_api.py:24</td>
+        <td class="evidence">f.re********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/neko/config/neko.yml:29</td>
+        <td class="evidence">2eda********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/neko/config/neko.yml:30</td>
+        <td class="evidence">c39c********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/alternative_readmes/web-db-user_README_template.md:626</td>
+        <td class="evidence">${to******...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/docs-templates/app/docs/background/notifications/DOCS.md:260</td>
+        <td class="evidence">{exp********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/docs-templates/app/docs/background/notifications/DOCS.md:1968</td>
+        <td class="evidence">Devi********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/docs-templates/app/docs/storage/securestore/DOCS.md:123</td>
+        <td class="evidence">Secu********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#e74c3c">high</span></td>
+        <td>Database Connection String</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/scripts/validate-templates.sh:24</td>
+        <td class="evidence">mysq********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#e74c3c">high</span></td>
+        <td>Database Connection String</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/scripts/validate-templates.sh:35</td>
+        <td class="evidence">mysq********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/scripts/validate-templates.sh:36</td>
+        <td class="evidence">dev-********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/.webdev-cache/template-readmes.json:2</td>
+        <td class="evidence">${to********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/api.ts:24</td>
+        <td class="evidence">!!se********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/api.ts:106</td>
+        <td class="evidence">resu********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/api.ts:108</td>
+        <td class="evidence">!!se********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/api.ts:110</td>
+        <td class="evidence">sess********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/api.ts:146</td>
+        <td class="evidence">stri****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/auth.ts:36</td>
+        <td class="evidence">stri****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/env.ts:3</td>
+        <td class="evidence">proc********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/oauth.ts:162</td>
+        <td class="evidence">auth********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts:59</td>
+        <td class="evidence">Exch********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts:61</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts:114</td>
+        <td class="evidence">stri****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts:139</td>
+        <td class="evidence">ENV.********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts:212</td>
+        <td class="evidence">stri****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts:239</td>
+        <td class="evidence">auth********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/web-db-user/server/_core/env.ts:3</td>
+        <td class="evidence">proc********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/web-db-user/server/_core/sdk.ts:66</td>
+        <td class="evidence">Exch********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/web-db-user/server/_core/sdk.ts:71</td>
+        <td class="evidence">toke********...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/web-db-user/server/_core/sdk.ts:133</td>
+        <td class="evidence">stri****...</td>
+      </tr><tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Generic Secret/Token</td>
+        <td>/opt/.manus/webdev/templates/web-dev-templates/templates/web-db-user/server/_core/sdk.ts:158</td>
+        <td class="evidence">ENV.********...</td>
+      </tr>
+    </table>
+  </div>
+  <h2>File Permission Issues (1)</h2>
+  <div class="card">
+    <table>
+      <tr><th>Severity</th><th>Issue</th><th>Path</th><th>Permissions</th></tr>
+      <tr>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>World-writable file in sensitive directory</td>
+        <td>/usr/bin/envd</td>
+        <td>777</td>
+      </tr>
+    </table>
+  </div>
+  <h2>Top Remediation Actions</h2>
+  <div class="card">
+    <table>
+      <tr><th>#</th><th>Severity</th><th>Finding</th><th>Remediation</th></tr>
+      <tr>
+        <td>1</td>
+        <td><span class="badge" style="background:#e74c3c">high</span></td>
+        <td>SSH: PermitRootLogin enabled</td>
+        <td><div class="remediation">Set &#x27;PermitRootLogin no&#x27; in /etc/ssh/sshd_config and restart sshd.</div></td>
+      </tr><tr>
+        <td>2</td>
+        <td><span class="badge" style="background:#e74c3c">high</span></td>
+        <td>Firewall: No active firewall detected</td>
+        <td><div class="remediation">Install and enable a firewall: sudo apt install ufw &amp;&amp; sudo ufw enable</div></td>
+      </tr><tr>
+        <td>3</td>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>SSH: PasswordAuthentication enabled</td>
+        <td><div class="remediation">Set &#x27;PasswordAuthentication no&#x27; in /etc/ssh/sshd_config.</div></td>
+      </tr><tr>
+        <td>4</td>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Automatic updates: not configured</td>
+        <td><div class="remediation">Install and configure unattended-upgrades (Debian/Ubuntu) or dnf-automatic (RHEL).</div></td>
+      </tr><tr>
+        <td>5</td>
+        <td><span class="badge" style="background:#f39c12">medium</span></td>
+        <td>Password policy: not configured</td>
+        <td><div class="remediation">Configure minlen in /etc/security/pwquality.conf (recommended: 12+).</div></td>
+      </tr><tr>
+        <td>6</td>
+        <td><span class="badge" style="background:#3498db">low</span></td>
+        <td>SSH: X11Forwarding enabled</td>
+        <td><div class="remediation">Set &#x27;X11Forwarding no&#x27; in /etc/ssh/sshd_config unless needed.</div></td>
+      </tr><tr>
+        <td>7</td>
+        <td><span class="badge" style="background:#3498db">low</span></td>
+        <td>SSH: MaxAuthTries too high</td>
+        <td><div class="remediation">Set &#x27;MaxAuthTries 3&#x27; in /etc/ssh/sshd_config.</div></td>
+      </tr>
+    </table>
+  </div>
+
+  <footer>
+    security-baseline-auditor &mdash; Defensive, read-only security audit tool
+  </footer>
+</div>
+</body>
+</html>

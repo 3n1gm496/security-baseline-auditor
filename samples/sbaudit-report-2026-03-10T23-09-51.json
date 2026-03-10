@@ -1,0 +1,3220 @@
+{
+  "timestamp": "2026-03-10T23:09:51.676540+00:00",
+  "host_info": {
+    "hostname": "172e2a29e328",
+    "os_name": "Ubuntu 22.04.5 LTS",
+    "os_version": "#1 SMP PREEMPT_DYNAMIC Tue Mar 25 09:02:46 UTC 2025",
+    "os_family": "linux",
+    "kernel_version": "6.1.102",
+    "architecture": "x86_64",
+    "uptime": "up 4 days, 15 hours, 35 minutes",
+    "local_users": [
+      "root",
+      "nobody",
+      "ubuntu",
+      "user"
+    ],
+    "security_tools": [
+      "ufw",
+      "iptables"
+    ],
+    "installed_software": []
+  },
+  "listening_ports": [
+    {
+      "protocol": "tcp",
+      "local_address": "0.0.0.0",
+      "local_port": 5900,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": true
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "127.0.0.1",
+      "local_port": 9222,
+      "pid": 903,
+      "process_name": "chromium-browse",
+      "user": "ubuntu",
+      "executable_path": "/usr/lib/chromium-browser/chromium-browser",
+      "is_public": false
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "127.0.0.1",
+      "local_port": 9330,
+      "pid": 799,
+      "process_name": "start_server",
+      "user": "ubuntu",
+      "executable_path": "/opt/.manus/current/start_server",
+      "is_public": false
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "0.0.0.0",
+      "local_port": 22,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": true
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "0.0.0.0",
+      "local_port": 8329,
+      "pid": 1513,
+      "process_name": "node",
+      "user": "ubuntu",
+      "executable_path": "/usr/lib/code-server/lib/node",
+      "is_public": true
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "0.0.0.0",
+      "local_port": 8330,
+      "pid": 799,
+      "process_name": "start_server",
+      "user": "ubuntu",
+      "executable_path": "/opt/.manus/current/start_server",
+      "is_public": true
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "0.0.0.0",
+      "local_port": 8340,
+      "pid": 835,
+      "process_name": "upgrade",
+      "user": "ubuntu",
+      "executable_path": "/opt/.manus/current/upgrade",
+      "is_public": true
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "127.0.0.53%lo",
+      "local_port": 53,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": false
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "127.0.0.1",
+      "local_port": 8350,
+      "pid": 1555,
+      "process_name": "manus-mcp-cli",
+      "user": "ubuntu",
+      "executable_path": "/usr/local/bin/manus-mcp-cli",
+      "is_public": false
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "*",
+      "local_port": 5901,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": true
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "::",
+      "local_port": 5900,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": true
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "::",
+      "local_port": 22,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": true
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "*",
+      "local_port": 8333,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": true
+    },
+    {
+      "protocol": "tcp",
+      "local_address": "*",
+      "local_port": 49983,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": true
+    },
+    {
+      "protocol": "udp",
+      "local_address": "224.0.0.251",
+      "local_port": 5353,
+      "pid": 903,
+      "process_name": "chromium-browse",
+      "user": "ubuntu",
+      "executable_path": "/usr/lib/chromium-browser/chromium-browser",
+      "is_public": false
+    },
+    {
+      "protocol": "udp",
+      "local_address": "127.0.0.53",
+      "local_port": 53,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": false
+    },
+    {
+      "protocol": "udp",
+      "local_address": "127.0.0.1",
+      "local_port": 323,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": false
+    },
+    {
+      "protocol": "udp",
+      "local_address": "::1",
+      "local_port": 323,
+      "pid": null,
+      "process_name": "",
+      "user": "",
+      "executable_path": "",
+      "is_public": false
+    }
+  ],
+  "findings": [
+    {
+      "check_id": "LIN-001",
+      "title": "SSH: PermitRootLogin enabled",
+      "description": "SSH allows direct root login, which is a security risk.",
+      "severity": "high",
+      "status": "fail",
+      "evidence": "PermitRootLogin yes",
+      "remediation": "Set 'PermitRootLogin no' in /etc/ssh/sshd_config and restart sshd.",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-002",
+      "title": "SSH: PasswordAuthentication enabled",
+      "description": "SSH allows password-based login. Key-based auth is more secure.",
+      "severity": "medium",
+      "status": "warn",
+      "evidence": "PasswordAuthentication yes",
+      "remediation": "Set 'PasswordAuthentication no' in /etc/ssh/sshd_config.",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-003",
+      "title": "SSH: Protocol version OK",
+      "description": "SSH uses protocol version 2 (default in modern OpenSSH).",
+      "severity": "info",
+      "status": "pass",
+      "evidence": "",
+      "remediation": "",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-004",
+      "title": "SSH: X11Forwarding enabled",
+      "description": "X11 forwarding can be exploited for display hijacking.",
+      "severity": "low",
+      "status": "warn",
+      "evidence": "X11Forwarding yes",
+      "remediation": "Set 'X11Forwarding no' in /etc/ssh/sshd_config unless needed.",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-005",
+      "title": "Sudoers: No NOPASSWD entries",
+      "description": "No NOPASSWD entries found in sudoers configuration.",
+      "severity": "info",
+      "status": "pass",
+      "evidence": "",
+      "remediation": "",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-006",
+      "title": "Shadow file permissions OK",
+      "description": "/etc/shadow has appropriate permissions.",
+      "severity": "info",
+      "status": "pass",
+      "evidence": "Permissions: 640",
+      "remediation": "",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-007",
+      "title": "Firewall: No active firewall detected",
+      "description": "No active firewall (UFW, firewalld, iptables) was detected.",
+      "severity": "high",
+      "status": "fail",
+      "evidence": "",
+      "remediation": "Install and enable a firewall: sudo apt install ufw && sudo ufw enable",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-009",
+      "title": "No risky services enabled",
+      "description": "No known risky services are enabled.",
+      "severity": "info",
+      "status": "pass",
+      "evidence": "",
+      "remediation": "",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-010",
+      "title": "IP forwarding disabled",
+      "description": "IPv4 forwarding is disabled.",
+      "severity": "info",
+      "status": "pass",
+      "evidence": "",
+      "remediation": "",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-011",
+      "title": "Core dumps restricted",
+      "description": "Core dumps are properly restricted.",
+      "severity": "info",
+      "status": "pass",
+      "evidence": "",
+      "remediation": "",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-012",
+      "title": "/tmp mount options",
+      "description": "Cannot determine /tmp mount options.",
+      "severity": "info",
+      "status": "skip",
+      "evidence": "",
+      "remediation": "",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-013",
+      "title": "Automatic updates: not configured",
+      "description": "No automatic security update mechanism detected.",
+      "severity": "medium",
+      "status": "warn",
+      "evidence": "",
+      "remediation": "Install and configure unattended-upgrades (Debian/Ubuntu) or dnf-automatic (RHEL).",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-014",
+      "title": "Password policy: not configured",
+      "description": "No password minimum length policy found.",
+      "severity": "medium",
+      "status": "warn",
+      "evidence": "",
+      "remediation": "Configure minlen in /etc/security/pwquality.conf (recommended: 12+).",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-015",
+      "title": "SSH: MaxAuthTries too high",
+      "description": "MaxAuthTries is 6. Recommended: 3-4.",
+      "severity": "low",
+      "status": "warn",
+      "evidence": "MaxAuthTries 6",
+      "remediation": "Set 'MaxAuthTries 3' in /etc/ssh/sshd_config.",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-016",
+      "title": "/etc/passwd permissions OK",
+      "description": "/etc/passwd permissions: 644.",
+      "severity": "info",
+      "status": "pass",
+      "evidence": "",
+      "remediation": "",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    },
+    {
+      "check_id": "LIN-017",
+      "title": "ASLR: fully enabled",
+      "description": "ASLR is set to full randomization (2).",
+      "severity": "info",
+      "status": "pass",
+      "evidence": "",
+      "remediation": "",
+      "category": "hardening",
+      "os_family": "linux",
+      "metadata": {}
+    }
+  ],
+  "secret_findings": [
+    {
+      "file_path": "/home/ubuntu/.env",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 19,
+      "masked_value": "2eda********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.env",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 20,
+      "masked_value": "c39c********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.env",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 23,
+      "masked_value": "bd71********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 80,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 209,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 280,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/_tokenizer.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 132,
+      "masked_value": "Toke*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/_tokenizer.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 146,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/QStd7_Cv5UD4kI84_cFzL/packaging/licenses/__init__.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 125,
+      "masked_value": "toke******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 80,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 209,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 280,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/_tokenizer.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 132,
+      "masked_value": "Toke*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/_tokenizer.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 146,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.cache/uv/archive-v0/Kxfp1oRakWtJGlBBp52fh/setuptools/_vendor/packaging/licenses/__init__.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 125,
+      "masked_value": "toke******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.config/code-server/config.yaml",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 4,
+      "masked_value": "bd71********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/ftplib.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 943,
+      "masked_value": "netr********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/functools.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 853,
+      "masked_value": "get_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/functools.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 856,
+      "masked_value": "curr********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/functools.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 926,
+      "masked_value": "get_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/getpass.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 61,
+      "masked_value": "fall********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/getpass.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 76,
+      "masked_value": "_raw********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/getpass.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 90,
+      "masked_value": "fall********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/imaplib.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 638,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/imaplib.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 640,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/imaplib.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1573,
+      "masked_value": "getp********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/inspect.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2202,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/netrc.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 151,
+      "masked_value": "lexe********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/plistlib.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 536,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/poplib.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 340,
+      "masked_value": "byte********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 167,
+      "masked_value": "next****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 170,
+      "masked_value": "next****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 174,
+      "masked_value": "next****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 177,
+      "masked_value": "next****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 180,
+      "masked_value": "next****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/shlex.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 300,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/smtplib.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 681,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/tokenize.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "grou********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/tokenize.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 136,
+      "masked_value": "Whit******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/tokenize.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 256,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/email/_header_value_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1483,
+      "masked_value": "Toke*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/email/_header_value_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2162,
+      "masked_value": "get_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/email/_header_value_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2571,
+      "masked_value": "Valu********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/email/generator.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 387,
+      "masked_value": "rand********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/idlelib/filelist.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 106,
+      "masked_value": "os.g*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/idlelib/iomenu.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 377,
+      "masked_value": "os.g*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/logging/handlers.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1054,
+      "masked_value": "cred*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/multiprocessing/managers.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 283,
+      "masked_value": "Toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 121,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 344,
+      "masked_value": "spli********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 349,
+      "masked_value": "url_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 360,
+      "masked_value": "inde******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 365,
+      "masked_value": "inde********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 407,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 426,
+      "masked_value": "pass****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 442,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 467,
+      "masked_value": "ask_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 490,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/network/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 517,
+      "masked_value": "pass*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/vcs/subversion.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 98,
+      "masked_value": "Opti********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/vcs/versioncontrol.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 410,
+      "masked_value": "Opti********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/vcs/versioncontrol.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 423,
+      "masked_value": "user*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/vcs/versioncontrol.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 424,
+      "masked_value": "Opti********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_internal/vcs/versioncontrol.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 426,
+      "masked_value": "hide********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/distlib/index.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 83,
+      "masked_value": "cfg.****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/distlib/util.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 822,
+      "masked_value": "pref********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/distlib/util.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 826,
+      "masked_value": "unqu********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/packaging/_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 71,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/packaging/_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 197,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/packaging/_parser.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 268,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/packaging/_tokenizer.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 133,
+      "masked_value": "Toke*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/packaging/_tokenizer.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 147,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/pygments/lexer.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 585,
+      "masked_value": "cls.********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/pygments/token.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 55,
+      "masked_value": "_Tok********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/adapters.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 281,
+      "masked_value": "get_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/adapters.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 285,
+      "masked_value": "pass*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/adapters.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 606,
+      "masked_value": "get_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 53,
+      "masked_value": "str(********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 60,
+      "masked_value": "pass********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 81,
+      "masked_value": "pass****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/auth.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 112,
+      "masked_value": "pass****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/requests/sessions.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 322,
+      "masked_value": "get_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 69,
+      "masked_value": "pass****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 136,
+      "masked_value": "pass*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 203,
+      "masked_value": "pass*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 362,
+      "masked_value": "Prom*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/prompt.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 369,
+      "masked_value": "{pas********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "Styl****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 91,
+      "masked_value": "Styl****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 197,
+      "masked_value": "tupl********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 204,
+      "masked_value": "toke******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 496,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/rich/syntax.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 508,
+      "masked_value": "next********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/truststore/_api.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 143,
+      "masked_value": "_Pas********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/truststore/_api.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 146,
+      "masked_value": "pass****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connection.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 320,
+      "masked_value": "key_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connection.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 354,
+      "masked_value": "key_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connection.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 423,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connectionpool.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 975,
+      "masked_value": "key_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connectionpool.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 991,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/connectionpool.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1047,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 477,
+      "masked_value": "pass********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/socks.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 102,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/site-packages/pip/_vendor/urllib3/contrib/_securetransport/low_level.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 231,
+      "masked_value": "base********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/tkinter/filedialog.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 219,
+      "masked_value": "os.g*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/parse.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 198,
+      "masked_value": "user********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/parse.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 228,
+      "masked_value": "user********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/parse.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1157,
+      "masked_value": "user********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 56,
+      "masked_value": "gehe********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 757,
+      "masked_value": "_spl********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 872,
+      "masked_value": "HTTP********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 934,
+      "masked_value": "pass********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 935,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1001,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1064,
+      "masked_value": "HTTP********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1066,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1523,
+      "masked_value": "_spl********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1902,
+      "masked_value": "unqu********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1908,
+      "masked_value": "unqu********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2044,
+      "masked_value": "_spl********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2048,
+      "masked_value": "unqu********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2274,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2292,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2306,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2320,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2337,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2338,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2346,
+      "masked_value": "getp********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/urllib/request.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2447,
+      "masked_value": "self********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/zipfile/__init__.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1575,
+      "masked_value": "expe****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/zipfile/__init__.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1702,
+      "masked_value": "self****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.local/share/uv/python/cpython-3.13.8-linux-x86_64-gnu/lib/python3.13/zipfile/__init__.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1704,
+      "masked_value": "expe****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/.nvm/test/common.sh",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 119,
+      "masked_value": "subs******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/auditor/checks/linux/hardening.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 594,
+      "masked_value": "worl********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/auditor/checks/macos/hardening.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 144,
+      "masked_value": "requ****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/tests/test_secrets.py",
+      "pattern_name": "AWS Access Key",
+      "line_number": 13,
+      "masked_value": "AKIA********...",
+      "severity": "critical"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/tests/test_secrets.py",
+      "pattern_name": "AWS Access Key",
+      "line_number": 54,
+      "masked_value": "AKIA********...",
+      "severity": "critical"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/tests/test_secrets.py",
+      "pattern_name": "GitHub Token",
+      "line_number": 64,
+      "masked_value": "ghp_********...",
+      "severity": "high"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/tests/test_secrets.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 64,
+      "masked_value": "ghp_********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/tests/test_secrets.py",
+      "pattern_name": "Private Key (PEM)",
+      "line_number": 74,
+      "masked_value": "----********...",
+      "severity": "critical"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/tests/test_secrets.py",
+      "pattern_name": "AWS Access Key",
+      "line_number": 97,
+      "masked_value": "AKIA********...",
+      "severity": "critical"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/tests/test_secrets.py",
+      "pattern_name": "Generic API Key",
+      "line_number": 97,
+      "masked_value": "AKIA********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/tests/test_secrets.py",
+      "pattern_name": "AWS Access Key",
+      "line_number": 106,
+      "masked_value": "AKIA********...",
+      "severity": "critical"
+    },
+    {
+      "file_path": "/home/ubuntu/security-baseline-auditor/tests/test_secrets.py",
+      "pattern_name": "Generic API Key",
+      "line_number": 106,
+      "masked_value": "AKIA********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/terminal_full_output/2026-03-10_19-09-31_272881_2735.txt",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 57,
+      "masked_value": ":tes********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/terminal_full_output/2026-03-10_19-09-31_272881_2735.txt",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 58,
+      "masked_value": ":tes********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/home/ubuntu/terminal_full_output/2026-03-10_19-09-31_272881_2735.txt",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 59,
+      "masked_value": ":tes********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/etc/java-11-openjdk/management/management.properties",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 108,
+      "masked_value": "<key********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/etc/java-11-openjdk/management/management.properties",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 110,
+      "masked_value": "<tru********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/js/scripting/css-procedural.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 615,
+      "masked_value": "this********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/js/scripting/css-procedural.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 680,
+      "masked_value": "this********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/js/scripting/css-procedural.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 682,
+      "masked_value": "this********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/js/scripting/css-procedural.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 695,
+      "masked_value": "this********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/main/chn-0.json",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 5302,
+      "masked_value": "*.sh********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/main/chn-0.json",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 5303,
+      "masked_value": "*?fr********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/main/irn-0.json",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 496,
+      "masked_value": "*&cl********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-cookies.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-cookies.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-cookies.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-others.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.abort-on-stack-trace.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/annoyances-overlays.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.abort-on-stack-trace.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.evaldata-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 117,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/chn-0.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/cze-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/cze-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/cze-0.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.abort-on-stack-trace.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.evaldata-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 117,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.json-prune-fetch-response.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 386,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.json-prune-xhr-response.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 388,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/default.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fin-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fin-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fin-0.json-prune-fetch-response.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 386,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fin-0.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.abort-on-stack-trace.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/fra-0.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/hun-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/hun-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/hun-0.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/idn-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/idn-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/idn-0.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.abort-on-stack-trace.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/irn-0.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/isr-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/isr-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/isr-0.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/jpn-1.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/jpn-1.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/jpn-1.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/jpn-1.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/jpn-1.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.abort-on-stack-trace.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/kor-1.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/ltu-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/ltu-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nld-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nld-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nld-0.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nld-0.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nor-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nor-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nor-0.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nor-0.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/nor-0.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/pol-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/pol-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/pol-0.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/pol-0.abort-on-stack-trace.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rou-1.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rou-1.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rou-1.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.abort-on-stack-trace.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/rus-0.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.abort-on-stack-trace.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/spa-1.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/swe-1.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/swe-1.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/swe-1.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/swe-1.json-prune-fetch-response.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 386,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/swe-1.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tha-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tha-0.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/tur-0.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.abort-current-script.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 94,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.abort-on-property-read.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.abort-on-property-write.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.json-prune.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 290,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.no-xhr-if.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 225,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-lite/rulesets/scripting/scriptlet/vie-1.prevent-fetch.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 185,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/resources/scriptlets.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 305,
+      "masked_value": "scri********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/resources/scriptlets.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 368,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/resources/scriptlets.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1027,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/resources/scriptlets.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1363,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/resources/scriptlets.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1419,
+      "masked_value": "getE********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/thirdparties/urlhaus-filter/urlhaus-filter-online.txt",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1502,
+      "masked_value": "31a3********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/thirdparties/urlhaus-filter/urlhaus-filter-online.txt",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1503,
+      "masked_value": "49d7********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/thirdparties/urlhaus-filter/urlhaus-filter-online.txt",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1504,
+      "masked_value": "0af5********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/assets/ublock/badware.min.txt",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2919,
+      "masked_value": "*&uu********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/1p-filters.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 74,
+      "masked_value": "hint********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/advanced-settings.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 40,
+      "masked_value": "func********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/benchmarks.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 259,
+      "masked_value": "keyw********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/code-viewer.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 62,
+      "masked_value": "func********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript-extra.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 470,
+      "masked_value": "vAPI********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript-extra.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 549,
+      "masked_value": "this********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript-extra.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 551,
+      "masked_value": "vAPI********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript-extra.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 567,
+      "masked_value": "this********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 640,
+      "masked_value": "hasP********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/contentscript.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 730,
+      "masked_value": "vAPI********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 127,
+      "masked_value": "func********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 246,
+      "masked_value": "merg********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 437,
+      "masked_value": "`${t****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 440,
+      "masked_value": "`${s*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 442,
+      "masked_value": "`${d*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/dyna-rules.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 546,
+      "masked_value": "merg********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/logger-ui.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1096,
+      "masked_value": "resp********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/logger-ui.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1125,
+      "masked_value": "allT********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/messaging.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 863,
+      "masked_value": "${vA********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/messaging.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1480,
+      "masked_value": "µb.p********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/messaging.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1573,
+      "masked_value": "µb.p********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/messaging.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1749,
+      "masked_value": "${vA********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/redirect-engine.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 111,
+      "masked_value": "warS********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/redirect-engine.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 112,
+      "masked_value": "${se********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/redirect-engine.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 200,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering-core.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 44,
+      "masked_value": "`${a********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering-core.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 46,
+      "masked_value": "reng********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering-core.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 61,
+      "masked_value": "`${a********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering-core.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 68,
+      "masked_value": "depe********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 192,
+      "masked_value": "unde******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 204,
+      "masked_value": "vAPI********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 211,
+      "masked_value": "vAPI********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 228,
+      "masked_value": "vAPI********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlet-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 243,
+      "masked_value": "vAPI********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-dnr-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 105,
+      "masked_value": "JSON********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 898,
+      "masked_value": "/[^\\********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1230,
+      "masked_value": "this********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2287,
+      "masked_value": "this********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2375,
+      "masked_value": "s.sl********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2928,
+      "masked_value": "arg.*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2931,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2935,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-filtering-parser.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 4296,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 3199,
+      "masked_value": "/[%0********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 3754,
+      "masked_value": "matc*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 3773,
+      "masked_value": "best********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 3816,
+      "masked_value": "best********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 4512,
+      "masked_value": "rule********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 4517,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/static-net-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 5495,
+      "masked_value": "urlT********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/storage.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1146,
+      "masked_value": "${vA********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/tab.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 985,
+      "masked_value": "Date*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/tab.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1007,
+      "masked_value": "Date*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/tab.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1019,
+      "masked_value": "Date*******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/traffic.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 465,
+      "masked_value": "µb.p********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/vapi-background.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1174,
+      "masked_value": "/\\?s********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/vapi-background.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1185,
+      "masked_value": "matc*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/vapi-background.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1210,
+      "masked_value": "gene********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/vapi-background.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1218,
+      "masked_value": "`${g********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/vapi-client.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 43,
+      "masked_value": "func******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/whitelist.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 46,
+      "masked_value": "func********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/search.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 46,
+      "masked_value": "func********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/ubo-dynamic-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 216,
+      "masked_value": "func********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/ubo-static-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 69,
+      "masked_value": "astP********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/ubo-static-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 119,
+      "masked_value": "astP********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/ubo-static-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 234,
+      "masked_value": "func********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/codemirror/ubo-static-filtering.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 776,
+      "masked_value": "`/${********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlets/epicker.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 816,
+      "masked_value": "vAPI********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlets/epicker.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 818,
+      "masked_value": "vAPI********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/js/scriptlets/load-3p-css.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 30,
+      "masked_value": "vAPI********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/chrome-extensions/ublock-origin/web_accessible_resources/nobab.js",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 51,
+      "masked_value": "toke******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/scripts/check-start-code-server.sh",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 15,
+      "masked_value": "$(op*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/scripts/check-start-code-server.sh",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 17,
+      "masked_value": "$COD********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/scripts/start-neko-with-turn.sh",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 14,
+      "masked_value": "$(op*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/.packages/scripts/start-neko-with-turn.sh",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 18,
+      "masked_value": "$(op*****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/current/data_api.py",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 24,
+      "masked_value": "f.re********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/neko/config/neko.yml",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 29,
+      "masked_value": "2eda********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/neko/config/neko.yml",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 30,
+      "masked_value": "c39c********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/alternative_readmes/web-db-user_README_template.md",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 626,
+      "masked_value": "${to******...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/docs-templates/app/docs/background/notifications/DOCS.md",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 260,
+      "masked_value": "{exp********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/docs-templates/app/docs/background/notifications/DOCS.md",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 1968,
+      "masked_value": "Devi********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/docs-templates/app/docs/storage/securestore/DOCS.md",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 123,
+      "masked_value": "Secu********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/scripts/validate-templates.sh",
+      "pattern_name": "Database Connection String",
+      "line_number": 24,
+      "masked_value": "mysq********...",
+      "severity": "high"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/scripts/validate-templates.sh",
+      "pattern_name": "Database Connection String",
+      "line_number": 35,
+      "masked_value": "mysq********...",
+      "severity": "high"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/scripts/validate-templates.sh",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 36,
+      "masked_value": "dev-********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/.webdev-cache/template-readmes.json",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 2,
+      "masked_value": "${to********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/api.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 24,
+      "masked_value": "!!se********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/api.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 106,
+      "masked_value": "resu********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/api.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 108,
+      "masked_value": "!!se********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/api.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 110,
+      "masked_value": "sess********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/api.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 146,
+      "masked_value": "stri****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/lib/_core/auth.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 36,
+      "masked_value": "stri****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/env.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 3,
+      "masked_value": "proc********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/oauth.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 162,
+      "masked_value": "auth********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 59,
+      "masked_value": "Exch********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 61,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 114,
+      "masked_value": "stri****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 139,
+      "masked_value": "ENV.********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 212,
+      "masked_value": "stri****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/app/server/_core/sdk.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 239,
+      "masked_value": "auth********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/web-db-user/server/_core/env.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 3,
+      "masked_value": "proc********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/web-db-user/server/_core/sdk.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 66,
+      "masked_value": "Exch********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/web-db-user/server/_core/sdk.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 71,
+      "masked_value": "toke********...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/web-db-user/server/_core/sdk.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 133,
+      "masked_value": "stri****...",
+      "severity": "medium"
+    },
+    {
+      "file_path": "/opt/.manus/webdev/templates/web-dev-templates/templates/web-db-user/server/_core/sdk.ts",
+      "pattern_name": "Generic Secret/Token",
+      "line_number": 158,
+      "masked_value": "ENV.********...",
+      "severity": "medium"
+    }
+  ],
+  "file_permission_findings": [
+    {
+      "file_path": "/usr/bin/envd",
+      "issue": "World-writable file in sensitive directory",
+      "current_permissions": "777",
+      "expected_permissions": "Not world-writable",
+      "severity": "medium"
+    }
+  ],
+  "summary": {
+    "total_checks": 16,
+    "status_counts": {
+      "fail": 2,
+      "warn": 5,
+      "pass": 8,
+      "skip": 1
+    },
+    "severity_counts": {
+      "high": 2,
+      "medium": 3,
+      "low": 2
+    },
+    "secrets_found": 392,
+    "file_permission_issues": 1,
+    "listening_ports": 18,
+    "public_ports": 10,
+    "risk_score": 100.0,
+    "risk_label": "CRITICAL"
+  },
+  "top_remediation": [
+    {
+      "check_id": "LIN-001",
+      "title": "SSH: PermitRootLogin enabled",
+      "severity": "high",
+      "remediation": "Set 'PermitRootLogin no' in /etc/ssh/sshd_config and restart sshd."
+    },
+    {
+      "check_id": "LIN-007",
+      "title": "Firewall: No active firewall detected",
+      "severity": "high",
+      "remediation": "Install and enable a firewall: sudo apt install ufw && sudo ufw enable"
+    },
+    {
+      "check_id": "LIN-002",
+      "title": "SSH: PasswordAuthentication enabled",
+      "severity": "medium",
+      "remediation": "Set 'PasswordAuthentication no' in /etc/ssh/sshd_config."
+    },
+    {
+      "check_id": "LIN-013",
+      "title": "Automatic updates: not configured",
+      "severity": "medium",
+      "remediation": "Install and configure unattended-upgrades (Debian/Ubuntu) or dnf-automatic (RHEL)."
+    },
+    {
+      "check_id": "LIN-014",
+      "title": "Password policy: not configured",
+      "severity": "medium",
+      "remediation": "Configure minlen in /etc/security/pwquality.conf (recommended: 12+)."
+    },
+    {
+      "check_id": "LIN-004",
+      "title": "SSH: X11Forwarding enabled",
+      "severity": "low",
+      "remediation": "Set 'X11Forwarding no' in /etc/ssh/sshd_config unless needed."
+    },
+    {
+      "check_id": "LIN-015",
+      "title": "SSH: MaxAuthTries too high",
+      "severity": "low",
+      "remediation": "Set 'MaxAuthTries 3' in /etc/ssh/sshd_config."
+    }
+  ],
+  "scan_mode": "quick",
+  "duration_seconds": 22.99
+}

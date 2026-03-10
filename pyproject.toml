@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "security-baseline-auditor"
+version = "1.0.0"
+description = "Defensive, read-only local security audit tool for Linux, macOS and Windows."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Security Baseline Auditor Team"},
+]
+keywords = ["security", "audit", "hardening", "baseline", "compliance"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: System :: Systems Administration",
+    "Typing :: Typed",
+]
+
+[project.scripts]
+sbaudit = "auditor.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/3n1gm496/security-baseline-auditor"
+Repository = "https://github.com/3n1gm496/security-baseline-auditor"
+Issues = "https://github.com/3n1gm496/security-baseline-auditor/issues"
+
+[tool.setuptools.packages.find]
+include = ["auditor*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
